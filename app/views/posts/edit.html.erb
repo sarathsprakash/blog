@@ -1,0 +1,24 @@
+<h1> Edit the post </h1>
+<%= form_for @post do |f| %>
+<% if @post.errors.any? %>
+	<div class="alert alert-error">
+		<h2>Errors :</h2>
+		<ul >
+			<% @post.errors.full_messages.each do |message| %>
+				<li> <%= message %></li>
+			<% end %>	
+		</ul>	
+	</div>	
+<% end %>	
+	<p>
+	<%= f.label :title %> <br/>
+	<%= f.text_field :title %>
+	</p>
+	<p>
+	<%= f.label :content %> <br/>
+	<%= f.text_area :content %>
+	</p>
+	<p>
+	<%= f.submit "Update Post" %>
+	</p>
+<% end %>
