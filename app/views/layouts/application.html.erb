@@ -4,7 +4,7 @@
   <title>Blog</title>
   <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css", "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js", "application", "data-turbolinks-track" => true %>
- <%= javascript_include_tag :all %>
+ <%= csrf_meta_tag %>
 </head>
 <body>
 <ul class="nav">
@@ -15,7 +15,7 @@
 
   Logged in as <strong><%= current_user.email %></strong>.
   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, :method => :get, :class => 'navbar-link'  %>
+  <%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'navbar-link'  %>
 <% else %>
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
