@@ -1,3 +1,7 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.content %></p>
-<small><%= @post.created_at %></small>
+<% if @post.email == current_user.email %>
+ <small> By you     <%= @post.created_at %></small>
+<% else %>
+ <small> By <%= @post.email %>     <%= @post.created_at %></small>
+<% end %>
