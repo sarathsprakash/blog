@@ -41,7 +41,7 @@ end
 gem 'rails_12factor', group: :production
 # Use unicorn as the app server
 # gem 'unicorn'
-
+ruby '2.0.0'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
